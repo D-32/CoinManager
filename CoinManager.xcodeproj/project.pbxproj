@@ -28,12 +28,16 @@
 		9AAD46DB189EF54F00EB63F4 /* TransactionTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AAD46DA189EF54F00EB63F4 /* TransactionTableCellView.m */; };
 		9ABDECB318CE5D2E00649E56 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7CAC2C18A1B5E9004954CC /* QuartzCore.framework */; };
 		9ABDECB718CE671A00649E56 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABDECB618CE671A00649E56 /* NSString+MD5.m */; };
+		9AC23C9A18D48E1400A23CC9 /* PopoverTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC23C9918D48E1400A23CC9 /* PopoverTextField.m */; };
+		9AC23C9B18D48EDE00A23CC9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ADF2C6A189D00190008B268 /* MainMenu.xib */; };
+		9AC23CA418D490B700A23CC9 /* SFBPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC23C9F18D490B600A23CC9 /* SFBPopover.m */; };
+		9AC23CA518D490B700A23CC9 /* SFBPopoverWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC23CA118D490B600A23CC9 /* SFBPopoverWindow.m */; };
+		9AC23CA618D490B700A23CC9 /* SFBPopoverWindowFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC23CA318D490B700A23CC9 /* SFBPopoverWindowFrame.m */; };
 		9ADF2C56189D00190008B268 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ADF2C55189D00190008B268 /* Cocoa.framework */; };
 		9ADF2C60189D00190008B268 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9ADF2C5E189D00190008B268 /* InfoPlist.strings */; };
 		9ADF2C62189D00190008B268 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ADF2C61189D00190008B268 /* main.m */; };
 		9ADF2C66189D00190008B268 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9ADF2C64189D00190008B268 /* Credits.rtf */; };
 		9ADF2C69189D00190008B268 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ADF2C68189D00190008B268 /* AppDelegate.m */; };
-		9ADF2C6C189D00190008B268 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ADF2C6A189D00190008B268 /* MainMenu.xib */; };
 		9ADF2C6E189D00190008B268 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ADF2C6D189D00190008B268 /* Images.xcassets */; };
 		9AEC631818A6DB20004820E0 /* ExchangeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC631718A6DB20004820E0 /* ExchangeHelper.m */; };
 		9AEF715718C7CA3700863C2E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AEF715618C7CA3700863C2E /* SystemConfiguration.framework */; };
@@ -79,6 +83,14 @@
 		9AAD46DA189EF54F00EB63F4 /* TransactionTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionTableCellView.m; sourceTree = "<group>"; };
 		9ABDECB518CE671A00649E56 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		9ABDECB618CE671A00649E56 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		9AC23C9818D48E1400A23CC9 /* PopoverTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverTextField.h; sourceTree = "<group>"; };
+		9AC23C9918D48E1400A23CC9 /* PopoverTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverTextField.m; sourceTree = "<group>"; };
+		9AC23C9E18D490B600A23CC9 /* SFBPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFBPopover.h; sourceTree = "<group>"; };
+		9AC23C9F18D490B600A23CC9 /* SFBPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFBPopover.m; sourceTree = "<group>"; };
+		9AC23CA018D490B600A23CC9 /* SFBPopoverWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFBPopoverWindow.h; sourceTree = "<group>"; };
+		9AC23CA118D490B600A23CC9 /* SFBPopoverWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFBPopoverWindow.m; sourceTree = "<group>"; };
+		9AC23CA218D490B600A23CC9 /* SFBPopoverWindowFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFBPopoverWindowFrame.h; sourceTree = "<group>"; };
+		9AC23CA318D490B700A23CC9 /* SFBPopoverWindowFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFBPopoverWindowFrame.m; sourceTree = "<group>"; };
 		9ADF2C52189D00190008B268 /* CoinManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ADF2C55189D00190008B268 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9ADF2C58189D00190008B268 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -154,6 +166,37 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		9AC23C9418D488BF00A23CC9 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				9AC23C9D18D490B600A23CC9 /* SFBPopovers */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		9AC23C9718D48DD000A23CC9 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				9AC23C9818D48E1400A23CC9 /* PopoverTextField.h */,
+				9AC23C9918D48E1400A23CC9 /* PopoverTextField.m */,
+			);
+			name = Labels;
+			path = CoinManager/UI/Labels;
+			sourceTree = SOURCE_ROOT;
+		};
+		9AC23C9D18D490B600A23CC9 /* SFBPopovers */ = {
+			isa = PBXGroup;
+			children = (
+				9AC23C9E18D490B600A23CC9 /* SFBPopover.h */,
+				9AC23C9F18D490B600A23CC9 /* SFBPopover.m */,
+				9AC23CA018D490B600A23CC9 /* SFBPopoverWindow.h */,
+				9AC23CA118D490B600A23CC9 /* SFBPopoverWindow.m */,
+				9AC23CA218D490B600A23CC9 /* SFBPopoverWindowFrame.h */,
+				9AC23CA318D490B700A23CC9 /* SFBPopoverWindowFrame.m */,
+			);
+			path = SFBPopovers;
+			sourceTree = "<group>";
+		};
 		9ADF2C49189D00190008B268 = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +243,7 @@
 		9ADF2C5B189D00190008B268 /* CoinManager */ = {
 			isa = PBXGroup;
 			children = (
+				9AC23C9418D488BF00A23CC9 /* Libs */,
 				9ADF2C8C189D003C0008B268 /* Model */,
 				9A22E3BB189D2DBC005095C6 /* Helper */,
 				9ADF2C89189D003C0008B268 /* UI */,
@@ -229,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				9A22E3C4189D3CAA005095C6 /* Cells */,
+				9AC23C9718D48DD000A23CC9 /* Labels */,
 				9A24A212189F11700032726B /* CustomTableView.h */,
 				9A24A213189F11700032726B /* CustomTableView.m */,
 				9A22E3BF189D3C8D005095C6 /* MainViewController.h */,
@@ -320,9 +365,9 @@
 				9ADF2C6E189D00190008B268 /* Images.xcassets in Resources */,
 				9A22E3C3189D3C8D005095C6 /* MainViewController.xib in Resources */,
 				9ADF2C66189D00190008B268 /* Credits.rtf in Resources */,
-				9ADF2C6C189D00190008B268 /* MainMenu.xib in Resources */,
 				9A7726A618A06B07003086A6 /* ExchangeViewController.xib in Resources */,
 				03109B8D18A00AC2004B3998 /* ExchangeWindowController.xib in Resources */,
+				9AC23C9B18D48EDE00A23CC9 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,14 +378,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AC23C9A18D48E1400A23CC9 /* PopoverTextField.m in Sources */,
+				9AC23CA618D490B700A23CC9 /* SFBPopoverWindowFrame.m in Sources */,
 				9AAD46DB189EF54F00EB63F4 /* TransactionTableCellView.m in Sources */,
 				0389B00818A14AE1007EC964 /* UserDefaults.m in Sources */,
 				9A007EF318CF96450061A3BE /* User.m in Sources */,
 				9ABDECB718CE671A00649E56 /* NSString+MD5.m in Sources */,
 				9ADF2C69189D00190008B268 /* AppDelegate.m in Sources */,
 				9A24A214189F11700032726B /* CustomTableView.m in Sources */,
+				9AC23CA518D490B700A23CC9 /* SFBPopoverWindow.m in Sources */,
 				9A7726A518A06B07003086A6 /* ExchangeViewController.m in Sources */,
 				9AEC631818A6DB20004820E0 /* ExchangeHelper.m in Sources */,
+				9AC23CA418D490B700A23CC9 /* SFBPopover.m in Sources */,
 				9A22E3C2189D3C8D005095C6 /* MainViewController.m in Sources */,
 				9AAD46D8189EEF2F00EB63F4 /* DetailViewController.m in Sources */,
 				9A007EF718CF9B850061A3BE /* UserHelper.m in Sources */,
@@ -460,6 +509,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(CONFIGURATION_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Frameworks/**",
+					"$(PROJECT_DIR)/CoinManager/Libs",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CoinManager/CoinManager-Prefix.pch";
@@ -482,6 +532,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(CONFIGURATION_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Frameworks/**",
+					"$(PROJECT_DIR)/CoinManager/Libs",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CoinManager/CoinManager-Prefix.pch";

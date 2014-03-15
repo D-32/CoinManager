@@ -10,9 +10,11 @@
 
 @interface User : NSObject <NSCoding>
 
+@property (nonatomic, strong) NSString* userId;
 @property (nonatomic, strong) NSString* email;
 @property (nonatomic, strong) NSData* icon;
 @property (nonatomic, strong) NSString* address;
 @property (nonatomic, assign) double balance;
+@property (nonatomic, strong) NSArray* transactions;
 
 @end

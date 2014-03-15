@@ -35,52 +35,28 @@ static int CONFIRMATION_WARNING_MIN = 6;
 
 #pragma mark - Private
 - (void)update {
-    /*
-    float amount = 0;
-    for (Receiver* receiver in _transaction.receiver) {
-        amount += receiver.amount;
-    }
     
-    int more = (int)MAX(0, _transaction.receiver.count - 1);
-    
-    Receiver* receiver = _transaction.receiver[0];
-    if ([_transaction.orgAddress.address isEqualToString:_transaction.sender]) {
+    if (_transaction.amount < 0) {
         // out
         self.imageView.image = [NSImage imageNamed:@"Minus"];
-        self.addressLabel.stringValue = [NSString stringWithFormat:@"To: %@", receiver.address];
+        self.addressLabel.stringValue = [NSString stringWithFormat:@"To: %@", _transaction.recipient];
     } else {
         // in
         self.imageView.image = [NSImage imageNamed:@"Plus"];
         self.addressLabel.stringValue = [NSString stringWithFormat:@"From: %@", _transaction.sender];
     }
-    if (more > 0) {
-        self.addressLabel.stringValue = [NSString stringWithFormat:@"%@ (+%i)", self.addressLabel.stringValue, more];
-    }
+
+    self.totalLabel.stringValue = [NSString stringWithFormat:@"%.4f BTC  (%.2f %@)", _transaction.amount,_exchange.current * _transaction.amount, _exchange.currency];
     
-    NSString* total = [NSString stringWithFormat:@"%4.6f", amount / 100000000.0f];
-    NSString* currencySimbol = @"";
-    if ([_exchange.currency isEqualToString:@"USD"]) {
-        currencySimbol = @"$";
-    } else if ([_exchange.currency isEqualToString:@"EUR"]) {
-        currencySimbol = @"€";
-    }
-    self.totalLabel.stringValue = [NSString stringWithFormat:@"%@ BTC  (%@%.2f)", total, currencySimbol, _exchange.current * (amount / 100000000.0f)];
-    
-    NSDate* date = [NSDate dateWithTimeIntervalSince1970:_transaction.timestamp];
-    self.dateLabel.stringValue = [NSDateFormatter localizedStringFromDate:date dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterShortStyle];
+    self.dateLabel.stringValue = [NSDateFormatter localizedStringFromDate:_transaction.date dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterShortStyle];
 	
-	int confirmations = _transaction.orgAddress.currentBlockHeight - _transaction.createdBlockHeight + 1;
-	if (_transaction.createdBlockHeight == 0) {
-		confirmations = 0;
-	}
-	self.confirmationsLabel.stringValue = [NSString stringWithFormat:@"(%i Confirmations)", confirmations];
-	if (confirmations < CONFIRMATION_WARNING_MIN) {
-		self.confirmationsLabel.textColor = [NSColor redColor];
-	} else {
+    if ([_transaction.status isEqualToString:@"pending"]) {
+        self.confirmationsLabel.stringValue = @"Pending";
+        self.confirmationsLabel.textColor = [NSColor orangeColor];
+    } else if ([_transaction.status isEqualToString:@"complete"]) {
+        self.confirmationsLabel.stringValue = @"Complete";
         self.confirmationsLabel.textColor = [NSColor grayColor];
     }
-     */
-	
 }
 
 #pragma mark - ExchangeListener

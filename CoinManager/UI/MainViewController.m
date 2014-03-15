@@ -14,8 +14,11 @@
 #import "User.h"
 #import "UserListener.h"
 #import "UserHelper.h"
+#import "Exchange.h"
+#import "ExchangeListener.h"
+#import "ExchangeHelper.h"
 
-@interface MainViewController () <NSMenuDelegate, UserListener> {
+@interface MainViewController () <NSMenuDelegate, ExchangeListener, UserListener> {
     NSMutableArray* _addresses;
 }
 @property (strong) IBOutlet DetailViewController* descriptionViewController;
@@ -31,6 +34,7 @@
 @end
 
 @implementation MainViewController {
+    Exchange* _exchange;
     User* _user;
 }
 
@@ -40,14 +44,25 @@
         self.view.autoresizingMask = NSViewHeightSizable | NSViewWidthSizable;
         [self.menu setDelegate:self];
         
-        CALayer *viewLayer = [CALayer layer];
-        [viewLayer setBackgroundColor:CGColorCreateGenericRGB(1.0, 1.0, 1.0, 1.0)]; //RGB plus Alpha Channel
-        [self.topView setWantsLayer:YES]; // view's backing store is using a Core Animation Layer
+        CALayer* viewLayer = [CALayer layer];
+        [viewLayer setBackgroundColor:[NSColor whiteColor].CGColor];
+        [viewLayer setShadowOffset:CGSizeMake(0, -2)];
+        [viewLayer setShadowColor:[NSColor lightGrayColor].CGColor];
+        [viewLayer setShadowRadius:2];
+        [viewLayer setShadowOpacity:0.5];
+        [self.topView setWantsLayer:YES];
         [self.topView setLayer:viewLayer];
         
+        [[ExchangeHelper instance] addExchangeListener:self];
         [[UserHelper instance] addUserListener:self];
     }
     return self;
+}
+
+#pragma mark - ExchangeListener
+- (void)exchangeChanged:(Exchange *)exchange {
+    _exchange = exchange;
+    [self updateBalance];
 }
 
 #pragma mark - UserListener
@@ -57,29 +72,15 @@
     if (_user.address != nil) {
         self.addressLabel.stringValue = _user.address;
     }
-    self.balanceLabel.stringValue = [NSString stringWithFormat:@"%.4f BTC  (0.00 USD)", _user.balance];
+    [self updateBalance];
 }
 
 #pragma mark - Public
 
-#pragma Mark - Menu
-/*
-- (IBAction)actionCopyAddress:(id)sender {
-    NSInteger index = [self.tableView clickedRow];
-    if (index >= 0) {
-        Address* address = [_addresses objectAtIndex:index];
-        [[NSPasteboard generalPasteboard] clearContents];
-        [[NSPasteboard generalPasteboard] setString:address.address forType:NSStringPboardType];
-    }
+#pragma mark - Private
+- (void)updateBalance {
+    self.balanceLabel.stringValue = [NSString stringWithFormat:@"%.4f BTC  (%.2f USD)", _user.balance, _user.balance * _exchange.current];
 }
-
-- (IBAction)actionDelete:(id)sender {
-    NSInteger index = [self.tableView clickedRow];
-    if (index >= 0) {
-        [[AddressHelper instance] removeAddressAtIndex:(int)index];
-    }
-}
- */
 
 #pragma mark - NSMenuDelegate
 - (void)menuWillOpen:(NSMenu *)menu {

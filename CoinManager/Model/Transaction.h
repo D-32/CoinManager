@@ -10,9 +10,11 @@
 
 @interface Transaction : NSObject <NSCoding>
 
+@property (nonatomic, strong) NSString* transactionId;
+@property (nonatomic, strong) NSDate* date;
+@property (nonatomic, assign) double amount;
 @property (nonatomic, strong) NSString* sender;
-@property (nonatomic, strong) NSArray* receiver; // with Receiver (ex. sender addr)
-@property (nonatomic, assign) double timestamp;
-@property (nonatomic, assign) int createdBlockHeight;
+@property (nonatomic, strong) NSString* recipient;
+@property (nonatomic, strong) NSString* status;
 
 @end
