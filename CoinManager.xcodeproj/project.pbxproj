@@ -20,6 +20,11 @@
 		9A28EB34189E539F00CF7BF3 /* RequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A28EB33189E539F00CF7BF3 /* RequestHelper.m */; };
 		9A28EB37189EC7F400CF7BF3 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A28EB36189EC7F400CF7BF3 /* Transaction.m */; };
 		9A28EB3A189ED48D00CF7BF3 /* Receiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A28EB39189ED48D00CF7BF3 /* Receiver.m */; };
+		9A2DC35118D4F42A00A61907 /* KBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2DC34C18D4F42A00A61907 /* KBButton.m */; };
+		9A2DC35218D4F42A00A61907 /* KBButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2DC34E18D4F42A00A61907 /* KBButtonCell.m */; };
+		9A2DC35318D4F42A00A61907 /* NSColor+ColorExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2DC35018D4F42A00A61907 /* NSColor+ColorExtensions.m */; };
+		9A2DC35618D5147800A61907 /* CustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2DC35518D5147800A61907 /* CustomTextField.m */; };
+		9A2DC35918D517B100A61907 /* StringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2DC35818D517B100A61907 /* StringUtil.m */; };
 		9A7726A518A06B07003086A6 /* ExchangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7726A318A06B07003086A6 /* ExchangeViewController.m */; };
 		9A7726A618A06B07003086A6 /* ExchangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7726A418A06B07003086A6 /* ExchangeViewController.xib */; };
 		9A80E02118A587630048273D /* libSystem.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A80E02018A587630048273D /* libSystem.dylib */; };
@@ -71,6 +76,16 @@
 		9A28EB36189EC7F400CF7BF3 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
 		9A28EB38189ED48D00CF7BF3 /* Receiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receiver.h; sourceTree = "<group>"; };
 		9A28EB39189ED48D00CF7BF3 /* Receiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receiver.m; sourceTree = "<group>"; };
+		9A2DC34B18D4F42A00A61907 /* KBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBButton.h; sourceTree = "<group>"; };
+		9A2DC34C18D4F42A00A61907 /* KBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBButton.m; sourceTree = "<group>"; };
+		9A2DC34D18D4F42A00A61907 /* KBButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBButtonCell.h; sourceTree = "<group>"; };
+		9A2DC34E18D4F42A00A61907 /* KBButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBButtonCell.m; sourceTree = "<group>"; };
+		9A2DC34F18D4F42A00A61907 /* NSColor+ColorExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+ColorExtensions.h"; sourceTree = "<group>"; };
+		9A2DC35018D4F42A00A61907 /* NSColor+ColorExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+ColorExtensions.m"; sourceTree = "<group>"; };
+		9A2DC35418D5147800A61907 /* CustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTextField.h; sourceTree = "<group>"; };
+		9A2DC35518D5147800A61907 /* CustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTextField.m; sourceTree = "<group>"; };
+		9A2DC35718D517B100A61907 /* StringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringUtil.h; sourceTree = "<group>"; };
+		9A2DC35818D517B100A61907 /* StringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringUtil.m; sourceTree = "<group>"; };
 		9A7726A218A06B07003086A6 /* ExchangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExchangeViewController.h; path = CoinManager/UI/ExchangeViewController.h; sourceTree = SOURCE_ROOT; };
 		9A7726A318A06B07003086A6 /* ExchangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExchangeViewController.m; path = CoinManager/UI/ExchangeViewController.m; sourceTree = SOURCE_ROOT; };
 		9A7726A418A06B07003086A6 /* ExchangeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExchangeViewController.xib; path = CoinManager/UI/ExchangeViewController.xib; sourceTree = SOURCE_ROOT; };
@@ -157,11 +172,26 @@
 			path = CoinManager/UI/Cells;
 			sourceTree = SOURCE_ROOT;
 		};
+		9A2DC34A18D4F42A00A61907 /* KBButton */ = {
+			isa = PBXGroup;
+			children = (
+				9A2DC34B18D4F42A00A61907 /* KBButton.h */,
+				9A2DC34C18D4F42A00A61907 /* KBButton.m */,
+				9A2DC34D18D4F42A00A61907 /* KBButtonCell.h */,
+				9A2DC34E18D4F42A00A61907 /* KBButtonCell.m */,
+				9A2DC34F18D4F42A00A61907 /* NSColor+ColorExtensions.h */,
+				9A2DC35018D4F42A00A61907 /* NSColor+ColorExtensions.m */,
+			);
+			path = KBButton;
+			sourceTree = "<group>";
+		};
 		9ABDECB418CE66F700649E56 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				9ABDECB518CE671A00649E56 /* NSString+MD5.h */,
 				9ABDECB618CE671A00649E56 /* NSString+MD5.m */,
+				9A2DC35718D517B100A61907 /* StringUtil.h */,
+				9A2DC35818D517B100A61907 /* StringUtil.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -169,6 +199,7 @@
 		9AC23C9418D488BF00A23CC9 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				9A2DC34A18D4F42A00A61907 /* KBButton */,
 				9AC23C9D18D490B600A23CC9 /* SFBPopovers */,
 			);
 			path = Libs;
@@ -177,6 +208,8 @@
 		9AC23C9718D48DD000A23CC9 /* Labels */ = {
 			isa = PBXGroup;
 			children = (
+				9A2DC35418D5147800A61907 /* CustomTextField.h */,
+				9A2DC35518D5147800A61907 /* CustomTextField.m */,
 				9AC23C9818D48E1400A23CC9 /* PopoverTextField.h */,
 				9AC23C9918D48E1400A23CC9 /* PopoverTextField.m */,
 			);
@@ -386,17 +419,22 @@
 				9ABDECB718CE671A00649E56 /* NSString+MD5.m in Sources */,
 				9ADF2C69189D00190008B268 /* AppDelegate.m in Sources */,
 				9A24A214189F11700032726B /* CustomTableView.m in Sources */,
+				9A2DC35318D4F42A00A61907 /* NSColor+ColorExtensions.m in Sources */,
 				9AC23CA518D490B700A23CC9 /* SFBPopoverWindow.m in Sources */,
 				9A7726A518A06B07003086A6 /* ExchangeViewController.m in Sources */,
 				9AEC631818A6DB20004820E0 /* ExchangeHelper.m in Sources */,
+				9A2DC35918D517B100A61907 /* StringUtil.m in Sources */,
 				9AC23CA418D490B700A23CC9 /* SFBPopover.m in Sources */,
 				9A22E3C2189D3C8D005095C6 /* MainViewController.m in Sources */,
 				9AAD46D8189EEF2F00EB63F4 /* DetailViewController.m in Sources */,
+				9A2DC35118D4F42A00A61907 /* KBButton.m in Sources */,
 				9A007EF718CF9B850061A3BE /* UserHelper.m in Sources */,
 				9A28EB3A189ED48D00CF7BF3 /* Receiver.m in Sources */,
 				0363351F18C907E700912EF0 /* OAuthHelper.m in Sources */,
+				9A2DC35218D4F42A00A61907 /* KBButtonCell.m in Sources */,
 				0389B02018A24DDD007EC964 /* Exchange.m in Sources */,
 				9A28EB34189E539F00CF7BF3 /* RequestHelper.m in Sources */,
+				9A2DC35618D5147800A61907 /* CustomTextField.m in Sources */,
 				9A28EB37189EC7F400CF7BF3 /* Transaction.m in Sources */,
 				9ADF2C62189D00190008B268 /* main.m in Sources */,
 				03109B8C18A00AC2004B3998 /* ExchangeWindowController.m in Sources */,

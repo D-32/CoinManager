@@ -56,7 +56,7 @@
 		self.drawRoundCornerBesideArrow = YES;
 
 		self.viewMargin = 2;
-		self.backgroundColor = [NSColor colorWithCalibratedWhite:(CGFloat)0.1 alpha:(CGFloat)0.75];
+		self.backgroundColor = [NSColor colorWithCalibratedWhite:(CGFloat)0.1 alpha:(CGFloat)0.85];
 
 		self.movable = NO;
 		self.resizable = NO;

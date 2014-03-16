@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CustomTextField.h"
 
-@interface PopoverTextField : NSTextField
+@interface PopoverTextField : CustomTextField
+
+@property (nonatomic, strong) NSString* popoverText;
 
 @end

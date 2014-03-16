@@ -44,65 +44,72 @@ static int DELAY = 60;
     return self;
 }
 
+- (void)refresh {
+    [self update:NO];
+}
+
 - (void)update {
-	if (_busy) {
-        return;
-    }
 	[self update:YES];
 }
 
 - (void)update:(BOOL)cont {
+    if (_busy) {
+        return;
+    }
+    _busy = YES;
     OAuthHelper* oah = [[OAuthHelper alloc] init];
     [oah startRequest:@"https://coinbase.com/api/v1/transactions" completion:^(NSData* data){
-        NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        NSDictionary* user = [json objectForKey:@"current_user"];
-        NSDictionary* balance = [json objectForKey:@"balance"];
-        NSArray* jsonTransactions = [json objectForKey:@"transactions"];
-
-        _user.userId = user[@"id"];
-        _user.email = user[@"email"];
-        NSString* balanceStr = balance[@"amount"];
-        _user.balance = balanceStr.doubleValue;
-        
-        NSMutableArray* transactions = [[NSMutableArray alloc] init];
-        for (NSDictionary* jsonTransactionContainer in jsonTransactions) {
-            NSDictionary* jsonTransaction = jsonTransactionContainer[@"transaction"];
-            Transaction* transaction = [[Transaction alloc] init];
-            transaction.transactionId = jsonTransaction[@"id"];
+        if (data != nil) {
+            NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSDictionary* user = [json objectForKey:@"current_user"];
+            NSDictionary* balance = [json objectForKey:@"balance"];
+            NSArray* jsonTransactions = [json objectForKey:@"transactions"];
             
-            NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
-            [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
-            transaction.date = [dateFormatter dateFromString:jsonTransaction[@"created_at"]];
+            _user.userId = user[@"id"];
+            _user.email = user[@"email"];
+            NSString* balanceStr = balance[@"amount"];
+            _user.balance = balanceStr.doubleValue;
             
-            transaction.amount = [jsonTransaction[@"amount"][@"amount"] doubleValue];
-            
-            NSDictionary* sender = jsonTransaction[@"sender"];
-            if (sender != nil) {
-                transaction.sender = sender[@"email"];
+            NSMutableArray* transactions = [[NSMutableArray alloc] init];
+            for (NSDictionary* jsonTransactionContainer in jsonTransactions) {
+                NSDictionary* jsonTransaction = jsonTransactionContainer[@"transaction"];
+                Transaction* transaction = [[Transaction alloc] init];
+                transaction.transactionId = jsonTransaction[@"id"];
+                
+                NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+                [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+                [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
+                transaction.date = [dateFormatter dateFromString:jsonTransaction[@"created_at"]];
+                
+                transaction.amount = [jsonTransaction[@"amount"][@"amount"] doubleValue];
+                
+                NSDictionary* sender = jsonTransaction[@"sender"];
+                if (sender != nil) {
+                    transaction.sender = sender[@"email"];
+                }
+                
+                NSDictionary* recipient = jsonTransaction[@"recipient"];
+                if (recipient != nil) {
+                    transaction.recipient = recipient[@"email"];
+                } else {
+                    transaction.recipient = jsonTransaction[@"recipient_address"];
+                }
+                
+                transaction.status = jsonTransaction[@"status"];
+                
+                [transactions addObject:transaction];
             }
+            _user.transactions = transactions;
             
-            NSDictionary* recipient = jsonTransaction[@"recipient"];
-            if (recipient != nil) {
-                transaction.recipient = recipient[@"email"];
-            } else {
-                transaction.recipient = jsonTransaction[@"recipient_address"];
+            [self storeState];
+            [self notifyListeners];
+            
+            if (_user.icon == nil) {
+                [self loadUserIcon];
             }
-            
-            transaction.status = jsonTransaction[@"status"];
-            
-            [transactions addObject:transaction];
-        }
-        _user.transactions = transactions;
-        
-        [self storeState];
-        [self notifyListeners];
-        
-        if (_user.icon == nil) {
-            [self loadUserIcon];
-        }
-        if (_user.address == nil) {
-            [self loadUserAddress];
+            if (_user.address == nil) {
+                [self loadUserAddress];
+            }
         }
         
         if (cont) {

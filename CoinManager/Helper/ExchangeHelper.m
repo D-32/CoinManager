@@ -90,7 +90,9 @@ static int DELAY = 60;
 
 - (void)parseResponse:(NSData *)data {
     NSString* response = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    _exchange.current = response.floatValue;
+    if (response.floatValue > 0) {
+        _exchange.current = response.floatValue;
+    }
 }
 
 #pragma mark - Storage

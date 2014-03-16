@@ -32,6 +32,9 @@
     [viewLayer setBackgroundColor:[NSColor colorWithWhite:0.98 alpha:1.0].CGColor];
     [self.view setWantsLayer:YES];
     //[self.view setLayer:viewLayer];
+    
+    [self.tableView setColumnAutoresizingStyle:NSTableViewUniformColumnAutoresizingStyle];
+    //[tableColumn setResizingMask:NSTableColumnAutoresizingMask];
 }
 
 #pragma mark - TableView

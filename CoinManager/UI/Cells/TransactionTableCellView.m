@@ -12,13 +12,14 @@
 #import "Exchange.h"
 #import "ExchangeHelper.h"
 #import "ExchangeListener.h"
+#import "PopoverTextField.h"
+#import "StringUtil.h"
 
 static int CONFIRMATION_WARNING_MIN = 6;
 
 @interface TransactionTableCellView () <ExchangeListener>
 @property (nonatomic, weak) IBOutlet NSImageView* imageView;
-@property (nonatomic, weak) IBOutlet NSTextField* addressLabel;
-@property (nonatomic, weak) IBOutlet NSTextField* totalLabel;
+@property (nonatomic, weak) IBOutlet PopoverTextField* totalLabel;
 @property (nonatomic, weak) IBOutlet NSTextField* dateLabel;
 @property (nonatomic, weak) IBOutlet NSTextField* confirmationsLabel;
 @end
@@ -39,14 +40,23 @@ static int CONFIRMATION_WARNING_MIN = 6;
     if (_transaction.amount < 0) {
         // out
         self.imageView.image = [NSImage imageNamed:@"Minus"];
-        self.addressLabel.stringValue = [NSString stringWithFormat:@"To: %@", _transaction.recipient];
     } else {
         // in
         self.imageView.image = [NSImage imageNamed:@"Plus"];
-        self.addressLabel.stringValue = [NSString stringWithFormat:@"From: %@", _transaction.sender];
     }
 
-    self.totalLabel.stringValue = [NSString stringWithFormat:@"%.4f BTC  (%.2f %@)", _transaction.amount,_exchange.current * _transaction.amount, _exchange.currency];
+    self.totalLabel.stringValue = [NSString stringWithFormat:@"%.4f BTC", _transaction.amount];
+    self.totalLabel.popoverText = [NSString stringWithFormat:@"%.2f USD", _transaction.amount * _exchange.current];
+    if (_transaction.amount < 0) {
+        self.totalLabel.textColor = [NSColor colorWithRed:0.77 green:0.00 blue:0.02 alpha:1.00];
+    } else if (_transaction.amount > 0) {
+        self.totalLabel.textColor = [NSColor colorWithRed:0.13 green:0.54 blue:0.03 alpha:1.00];
+    }
+    CGFloat width = [StringUtil widthOfString:self.totalLabel.stringValue withFont:self.totalLabel.font];
+    self.totalLabel.frame = CGRectMake(self.totalLabel.frame.origin.x + (self.totalLabel.frame.size.width - (width + 10)), self.totalLabel.frame.origin.y, width + 10, self.totalLabel.frame.size.height);
+    
+    CGContextSetShouldSmoothFonts([[NSGraphicsContext currentContext] graphicsPort], false);
+    
     
     self.dateLabel.stringValue = [NSDateFormatter localizedStringFromDate:_transaction.date dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterShortStyle];
 	

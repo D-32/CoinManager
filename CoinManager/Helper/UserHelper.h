@@ -15,6 +15,7 @@
 
 + (UserHelper *)instance;
 
+- (void)refresh;
 - (void)addUserListener:(id<UserListener>)listener;
 - (void)removeUserListener:(id<UserListener>)listener;
 
