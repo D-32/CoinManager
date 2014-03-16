@@ -20,6 +20,27 @@
 }
 
 - (void)mouseEntered:(NSEvent *)event {
+    [self showPopover:event];
+}
+
+- (void)mouseMoved:(NSEvent *)event {
+    if ([_popover isVisible]) {
+        [_popover movePopoverToPoint:event.locationInWindow];
+    } else {
+        [self showPopover:event];
+    }
+}
+
+- (void)mouseExited:(NSEvent *)event {
+    _active = NO;
+    [_popover closePopover:self];
+}
+
+- (void)showPopover:(NSEvent *)event {
+    if (![self.window isKeyWindow]) {
+        return;
+    }
+    
     if (!_active && !CGRectEqualToRect(self.visibleRect, CGRectZero)) {
         _active = YES;
         NSFont* font = [NSFont systemFontOfSize:12];
@@ -39,15 +60,6 @@
         [_popover setArrowHeight:10];
         [_popover displayPopoverInWindow:self.window atPoint:event.locationInWindow];
     }
-}
-
-- (void)mouseMoved:(NSEvent *)event {
-    [_popover movePopoverToPoint:event.locationInWindow];
-}
-
-- (void)mouseExited:(NSEvent *)event {
-    _active = NO;
-    [_popover closePopover:self];
 }
 
 @end

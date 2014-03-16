@@ -17,5 +17,6 @@ typedef void (^CompletionBlockWithData)(NSData* data);
 - (void)authorize:(NSString *)code completion:(CompletionBlock)completionBlock;
 - (void)refreshWithCompletion:(CompletionBlock)completionBlock;
 - (void)startRequest:(NSString *)url completion:(CompletionBlockWithData)completionBlock;
+- (void)startRequest:(NSString *)url extraParms:(NSString *)parms postData:(NSString *)postData completion:(CompletionBlockWithData)completionBlock;
 
 @end

@@ -19,7 +19,7 @@
 
 - (void)authorize:(NSString *)code completion:(CompletionBlock)completionBlock {
 	RequestHelper* rh = [[RequestHelper alloc] init];
-	[rh startRequestWithUrl:[NSString stringWithFormat:@"https://coinbase.com/oauth/token?grant_type=authorization_code&code=%@&redirect_uri=urn:ietf:wg:oauth:2.0:oob&client_id=baf65d2585886be2041b1ea7df553d393b53cbe0a91e8ccf01b6001990e853fc&client_secret=c0a9d5807e8b526d06feef12f16c6e890aed737cb0add5d05bee26bc6fc87d5c", code] post:YES success:^(NSArray* result) {
+	[rh startRequestWithUrl:[NSString stringWithFormat:@"https://coinbase.com/oauth/token?grant_type=authorization_code&code=%@&redirect_uri=urn:ietf:wg:oauth:2.0:oob&client_id=baf65d2585886be2041b1ea7df553d393b53cbe0a91e8ccf01b6001990e853fc&client_secret=c0a9d5807e8b526d06feef12f16c6e890aed737cb0add5d05bee26bc6fc87d5c", code] post:YES postData:nil success:^(NSArray* result) {
 		NSData* data = result[0];
         NSError* error;
         NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
@@ -36,7 +36,7 @@
 
 - (void)refreshWithCompletion:(CompletionBlock)completionBlock {
 	RequestHelper* rh = [[RequestHelper alloc] init];
-	[rh startRequestWithUrl:[NSString stringWithFormat:@"https://coinbase.com/oauth/token?grant_type=refresh_token&refresh_token=%@&redirect_uri=urn:ietf:wg:oauth:2.0:oob&client_id=baf65d2585886be2041b1ea7df553d393b53cbe0a91e8ccf01b6001990e853fc&client_secret=c0a9d5807e8b526d06feef12f16c6e890aed737cb0add5d05bee26bc6fc87d5c", [UserDefaults instance].refreshToken] post:YES success:^(NSArray* result) {
+	[rh startRequestWithUrl:[NSString stringWithFormat:@"https://coinbase.com/oauth/token?grant_type=refresh_token&refresh_token=%@&redirect_uri=urn:ietf:wg:oauth:2.0:oob&client_id=baf65d2585886be2041b1ea7df553d393b53cbe0a91e8ccf01b6001990e853fc&client_secret=c0a9d5807e8b526d06feef12f16c6e890aed737cb0add5d05bee26bc6fc87d5c", [UserDefaults instance].refreshToken] post:YES postData:nil success:^(NSArray* result) {
 		NSData* data = result[0];
         NSError* error;
         NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
@@ -51,8 +51,18 @@
 }
 
 - (void)startRequest:(NSString *)url completion:(CompletionBlockWithData)completionBlock {
+    [self startRequest:url extraParms:nil postData:nil completion:completionBlock];
+}
+
+- (void)startRequest:(NSString *)url extraParms:(NSString *)parms postData:(NSString *)postData completion:(CompletionBlockWithData)completionBlock {
     RequestHelper* rh = [[RequestHelper alloc] init];
-    [rh startRequestWithUrl:[NSString stringWithFormat:@"%@?access_token=%@", url, [UserDefaults instance].accessToken] post:NO success:^(NSArray* result){
+    NSString* requestUrl;
+    if (parms == nil) {
+        requestUrl = [NSString stringWithFormat:@"%@?access_token=%@", url, [UserDefaults instance].accessToken];
+    } else {
+        requestUrl = [NSString stringWithFormat:@"%@?%@&access_token=%@", url, parms, [UserDefaults instance].accessToken];
+    }
+    [rh startRequestWithUrl:requestUrl post:(postData != nil) postData:postData success:^(NSArray* result){
         NSData* data = result[0];
         if (data.length == 1) {
             [self refreshWithCompletion:^(){

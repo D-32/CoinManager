@@ -18,7 +18,6 @@
 		9A28EB34189E539F00CF7BF3 /* RequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A28EB33189E539F00CF7BF3 /* RequestHelper.m */; };
 		9A28EB37189EC7F400CF7BF3 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A28EB36189EC7F400CF7BF3 /* Transaction.m */; };
 		9A28EB3A189ED48D00CF7BF3 /* Receiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A28EB39189ED48D00CF7BF3 /* Receiver.m */; };
-		9A29070418D5D45E005A686C /* PaymentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A29070318D5D45E005A686C /* PaymentController.m */; };
 		9A29070818D5D485005A686C /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A29070618D5D485005A686C /* PaymentViewController.m */; };
 		9A29070918D5D485005A686C /* PaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A29070718D5D485005A686C /* PaymentViewController.xib */; };
 		9A2DC35118D4F42A00A61907 /* KBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2DC34C18D4F42A00A61907 /* KBButton.m */; };
@@ -73,8 +72,6 @@
 		9A28EB36189EC7F400CF7BF3 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
 		9A28EB38189ED48D00CF7BF3 /* Receiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receiver.h; sourceTree = "<group>"; };
 		9A28EB39189ED48D00CF7BF3 /* Receiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receiver.m; sourceTree = "<group>"; };
-		9A29070218D5D45E005A686C /* PaymentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentController.h; sourceTree = "<group>"; };
-		9A29070318D5D45E005A686C /* PaymentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentController.m; sourceTree = "<group>"; };
 		9A29070518D5D485005A686C /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
 		9A29070618D5D485005A686C /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
 		9A29070718D5D485005A686C /* PaymentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentViewController.xib; sourceTree = "<group>"; };
@@ -183,8 +180,6 @@
 		9A29070118D5D3F6005A686C /* Payment */ = {
 			isa = PBXGroup;
 			children = (
-				9A29070218D5D45E005A686C /* PaymentController.h */,
-				9A29070318D5D45E005A686C /* PaymentController.m */,
 				9A29070518D5D485005A686C /* PaymentViewController.h */,
 				9A29070618D5D485005A686C /* PaymentViewController.m */,
 				9A29070718D5D485005A686C /* PaymentViewController.xib */,
@@ -469,7 +464,6 @@
 				9A2DC35618D5147800A61907 /* CustomTextField.m in Sources */,
 				9A8B05E318D634B8003DE320 /* PaymentWindowController.m in Sources */,
 				9A28EB37189EC7F400CF7BF3 /* Transaction.m in Sources */,
-				9A29070418D5D45E005A686C /* PaymentController.m in Sources */,
 				9ADF2C62189D00190008B268 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

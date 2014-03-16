@@ -21,18 +21,20 @@ static RequestHelper* instance;
 	NSMutableArray* _queue;
 	NSMutableArray* _data;
 	BOOL _post;
+    NSString* _postData;
 }
 
-- (void)startRequestWithUrl:(NSString *)url post:(BOOL)post success:(SuccessBlock)successBlock error:(ErrorBlock)errorBlock {
+- (void)startRequestWithUrl:(NSString *)url post:(BOOL)post postData:(NSString *)postData success:(SuccessBlock)successBlock error:(ErrorBlock)errorBlock {
     _successBlock = successBlock;
     _errorBlock = errorBlock;
 	
 	_queue = [[NSMutableArray alloc] initWithObjects:url, nil];
 	_post = post;
+    _postData = postData;
 	[self start];
 }
 
-- (void)startRequestWithUrls:(NSArray *)urls post:(BOOL)post success:(SuccessBlock)successBlock error:(ErrorBlock)errorBlock {
+- (void)startRequestWithUrls:(NSArray *)urls post:(BOOL)post postData:(NSString *)postData success:(SuccessBlock)successBlock error:(ErrorBlock)errorBlock {
 	_successBlock = successBlock;
     _errorBlock = errorBlock;
 	
@@ -63,13 +65,20 @@ static RequestHelper* instance;
 	}
 	
 	NSString* url = [_queue firstObject];
-	[_queue removeObjectAtIndex:0];
+    if (_queue.count > 0) {
+        [_queue removeObjectAtIndex:0];
+    }
 	
 	NSLog(@"RequestHelper: %@", url);
 	
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0];
 	if (_post) {
 		[request setHTTPMethod:@"POST"];
+        if (_postData) {
+            [request setHTTPBody:[_postData dataUsingEncoding:NSUTF8StringEncoding]];
+            [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+            NSLog(@"PostData: %@", _postData);
+        }
 	}
     _currentData = [NSMutableData dataWithCapacity: 0];
     NSURLConnection* connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];

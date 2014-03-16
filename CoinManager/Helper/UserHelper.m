@@ -121,7 +121,7 @@ static int DELAY = 60;
 
 - (void)loadUserIcon {
     RequestHelper* rh = [[RequestHelper alloc] init];
-    [rh startRequestWithUrl:[NSString stringWithFormat:@"http://www.gravatar.com/avatar/%@?d=retro", _user.email.md5] post:NO success:^(NSArray* array){
+    [rh startRequestWithUrl:[NSString stringWithFormat:@"http://www.gravatar.com/avatar/%@?d=retro", _user.email.md5] post:NO postData:nil success:^(NSArray* array){
         NSData* data = array[0];
         _user.icon = data;
         [self storeState];

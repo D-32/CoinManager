@@ -69,7 +69,7 @@ static int DELAY = 60;
     }
     _busy = YES;
 	RequestHelper* requestHelper = [[RequestHelper alloc] init];
-	[requestHelper startRequestWithUrl:[self stockUrl] post:NO success:^(NSArray* data){
+	[requestHelper startRequestWithUrl:[self stockUrl] post:NO postData:nil success:^(NSArray* data){
 		[self parseResponse:[data objectAtIndex:0]];
 		
 		_exchange.complete = YES;

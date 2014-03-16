@@ -21,7 +21,6 @@
 #import "KBButtonCell.h"
 #import <Quartz/Quartz.h>
 #import <WebKit/WebKit.h>
-#import "PaymentController.h"
 #import "PaymentWindowController.h"
 
 @interface MainViewController () <NSMenuDelegate, ExchangeListener, UserListener> {
@@ -104,15 +103,10 @@
 }
 
 - (void)actionPay:(id)sender {
-    /*
-    PaymentController* paymentController = [[PaymentController alloc] init];
-    [paymentController startPaymentWithWindow:self.view.window completionHandler:^() {
-        self.payButton.enabled = YES;
-    }];
-     */
-    
-    _paymentWindowController = [[PaymentWindowController alloc] initWithWindowNibName:@"PaymentWindowController"];
-    [_paymentWindowController.window setFrame:CGRectMake(self.view.window.frame.origin.x + 50,  self.view.window.frame.origin.y + self.view.window.frame.size.height - 300, 350, 250) display:YES];
+    if (_paymentWindowController == nil) {
+        _paymentWindowController = [[PaymentWindowController alloc] initWithWindowNibName:@"PaymentWindowController"];
+        [_paymentWindowController.window setFrame:CGRectMake(self.view.window.frame.origin.x + 250,  self.view.window.frame.origin.y + self.view.window.frame.size.height - 320, 350, 210) display:YES];
+    }
     [_paymentWindowController setExchange:_exchange];
     [_paymentWindowController.window makeKeyAndOrderFront:sender];
 }
@@ -140,7 +134,7 @@
 - (void)updateBalance {
     self.balanceLabel.stringValue = [NSString stringWithFormat:@"%.4f BTC  (%.2f USD)", _user.balance, _user.balance * _exchange.current];
     
-    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://46.105.26.1/coinmanager/test.html"]];
+    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://46.105.26.1/coinmanager/api/get_graph.php?c=USD"]];
     [self.webView.mainFrame loadRequest:request];
 }
 

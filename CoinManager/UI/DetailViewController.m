@@ -40,13 +40,13 @@
 #pragma mark - TableView
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     TransactionTableCellView* cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
-    Transaction* transaction = [_user.transactions objectAtIndex:0];
+    Transaction* transaction = [_user.transactions objectAtIndex:row];
     [cell setTransaction:transaction];
     return cell;
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-    return _user.transactions.count * 2;
+    return MIN(_user.transactions.count, 25);
 }
 
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {

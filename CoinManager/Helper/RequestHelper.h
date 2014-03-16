@@ -13,7 +13,8 @@ typedef void (^ErrorBlock)(NSError *);
 
 @interface RequestHelper : NSObject
 
-- (void)startRequestWithUrl:(NSString *)url post:(BOOL)post success:(SuccessBlock)successBlock error:(ErrorBlock)errorBlock;
-- (void)startRequestWithUrls:(NSArray *)urls post:(BOOL)post success:(SuccessBlock)successBlock error:(ErrorBlock)errorBlock;
+// TODO do extra get / post methods
+- (void)startRequestWithUrl:(NSString *)url post:(BOOL)post postData:(NSString *)postData success:(SuccessBlock)successBlock error:(ErrorBlock)errorBlock;
+- (void)startRequestWithUrls:(NSArray *)urls post:(BOOL)post postData:(NSString *)postData success:(SuccessBlock)successBlock error:(ErrorBlock)errorBlock;
 
 @end
