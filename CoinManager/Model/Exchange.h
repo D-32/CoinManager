@@ -13,6 +13,5 @@
 @property (nonatomic) BOOL complete;
 @property (nonatomic) NSString* currency;
 @property (nonatomic) float current;
-@property (nonatomic) NSData* image;
 
 @end

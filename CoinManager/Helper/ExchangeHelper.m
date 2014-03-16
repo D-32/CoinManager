@@ -43,7 +43,6 @@ static int DELAY = 60;
 
 #pragma mark - Public
 - (void)changeCurreny:(NSString *)currency {
-    _busy = YES;
     _exchange.currency = currency;
     _exchange.complete = NO;
     [self storeState];
@@ -51,29 +50,29 @@ static int DELAY = 60;
 	[self update:NO];
 }
 
+- (void)refresh {
+    [self update:NO];
+}
+
 #pragma mark - Private
 - (NSString *)stockUrl {
-    return [NSString stringWithFormat:@"http://46.105.26.1/bitmanager/api/get_market_data.php?c=%@", _exchange.currency];
-}
-- (NSString *)graphUrl {
-	return [NSString stringWithFormat:@"http://46.105.26.1/bitmanager/api/get_graph.php?c=%@", _exchange.currency];
+    return [NSString stringWithFormat:@"http://46.105.26.1/coinmanager/api/get_market_data.php?c=%@", _exchange.currency];
 }
 
 - (void)update {
-	if (_busy) {
-        return;
-    }
 	[self update:YES];
 }
 
 - (void)update:(BOOL)cont {
-	NSArray* urls = [NSArray arrayWithObjects:[self stockUrl], [self graphUrl], nil];
+    if (_busy) {
+        return;
+    }
+    _busy = YES;
 	RequestHelper* requestHelper = [[RequestHelper alloc] init];
-	[requestHelper startRequestWithUrls:urls post:NO success:^(NSArray* data){
+	[requestHelper startRequestWithUrl:[self stockUrl] post:NO success:^(NSArray* data){
 		[self parseResponse:[data objectAtIndex:0]];
 		
 		_exchange.complete = YES;
-		_exchange.image = [[data objectAtIndex:1] copy];
 		[self storeState];
 		[self notifyListeners];
 		if (cont) {
@@ -114,6 +113,7 @@ static int DELAY = 60;
     [_listeners removeObject:listener];
     [_listeners addObject:listener];
 	[listener exchangeChanged:_exchange];
+    NSLog(@"%lu exchange listener", _listeners.count);
 }
 
 - (void)removeExchangeListener:(id<ExchangeListener>)listener {

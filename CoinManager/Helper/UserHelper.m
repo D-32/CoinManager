@@ -160,6 +160,7 @@ static int DELAY = 60;
     [_listeners removeObject:listener];
     [_listeners addObject:listener];
 	[listener userChanged:_user];
+    NSLog(@"%lu user listener", _listeners.count);
 }
 
 - (void)removeUserListener:(id<UserListener>)listener {

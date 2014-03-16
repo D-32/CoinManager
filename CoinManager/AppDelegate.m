@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-#import "ExchangeWindowController.h"
 #import <WebKit/WebKit.h>
 #import "OAuthHelper.h"
 
@@ -23,7 +22,6 @@
 - (IBAction)actionToolbarDonate:(id)sender;
 - (IBAction)actionToolbarExchange:(id)sender;
 @property (nonatomic, strong) MainViewController* mainViewController;
-@property (nonatomic, strong) ExchangeWindowController* exchangeWindowController;
 @end
 
 @implementation AppDelegate {

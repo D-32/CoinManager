@@ -14,6 +14,7 @@
 
 + (ExchangeHelper *)instance;
 
+- (void)refresh;
 - (void)changeCurreny:(NSString *)currency;
 - (void)addExchangeListener:(id<ExchangeListener>)listener;
 - (void)removeExchangeListener:(id<ExchangeListener>)listener;

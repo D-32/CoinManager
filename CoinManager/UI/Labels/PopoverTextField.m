@@ -20,7 +20,7 @@
 }
 
 - (void)mouseEntered:(NSEvent *)event {
-    if (!_active) {
+    if (!_active && !CGRectEqualToRect(self.visibleRect, CGRectZero)) {
         _active = YES;
         NSFont* font = [NSFont systemFontOfSize:12];
         CGSize textSize = NSSizeToCGSize([self.popoverText sizeWithAttributes:[NSDictionary dictionaryWithObject:font forKey: NSFontAttributeName]]);

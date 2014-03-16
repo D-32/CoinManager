@@ -15,7 +15,6 @@
 		self.complete = NO;
 		self.currency = @"USD";
 		self.current = -1;
-		self.image = nil;
 	}
 	return self;
 }
@@ -25,7 +24,6 @@
 		self.complete = [decoder decodeBoolForKey:@"complete"];
 		self.currency = [decoder decodeObjectForKey:@"currency"];
 		self.current = [decoder decodeFloatForKey:@"current"];
-		self.image = [decoder decodeObjectForKey:@"image"];
 	}
 	return self;
 }
@@ -34,7 +32,6 @@
 	[encoder encodeBool:self.complete forKey:@"complete"];
 	[encoder encodeObject:self.currency forKey:@"currency"];
 	[encoder encodeFloat:self.current forKey:@"current"];
-	[encoder encodeObject:self.image forKey:@"image"];
 }
 
 @end

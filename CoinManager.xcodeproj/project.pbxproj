@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03109B8C18A00AC2004B3998 /* ExchangeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03109B8A18A00AC2004B3998 /* ExchangeWindowController.m */; };
-		03109B8D18A00AC2004B3998 /* ExchangeWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03109B8B18A00AC2004B3998 /* ExchangeWindowController.xib */; };
 		0363351F18C907E700912EF0 /* OAuthHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0363351E18C907E700912EF0 /* OAuthHelper.m */; };
 		0389B00818A14AE1007EC964 /* UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0389B00718A14AE1007EC964 /* UserDefaults.m */; };
 		0389B02018A24DDD007EC964 /* Exchange.m in Sources */ = {isa = PBXBuildFile; fileRef = 0389B01E18A24DDD007EC964 /* Exchange.m */; };
@@ -20,15 +18,19 @@
 		9A28EB34189E539F00CF7BF3 /* RequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A28EB33189E539F00CF7BF3 /* RequestHelper.m */; };
 		9A28EB37189EC7F400CF7BF3 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A28EB36189EC7F400CF7BF3 /* Transaction.m */; };
 		9A28EB3A189ED48D00CF7BF3 /* Receiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A28EB39189ED48D00CF7BF3 /* Receiver.m */; };
+		9A29070418D5D45E005A686C /* PaymentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A29070318D5D45E005A686C /* PaymentController.m */; };
+		9A29070818D5D485005A686C /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A29070618D5D485005A686C /* PaymentViewController.m */; };
+		9A29070918D5D485005A686C /* PaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A29070718D5D485005A686C /* PaymentViewController.xib */; };
 		9A2DC35118D4F42A00A61907 /* KBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2DC34C18D4F42A00A61907 /* KBButton.m */; };
 		9A2DC35218D4F42A00A61907 /* KBButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2DC34E18D4F42A00A61907 /* KBButtonCell.m */; };
 		9A2DC35318D4F42A00A61907 /* NSColor+ColorExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2DC35018D4F42A00A61907 /* NSColor+ColorExtensions.m */; };
 		9A2DC35618D5147800A61907 /* CustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2DC35518D5147800A61907 /* CustomTextField.m */; };
 		9A2DC35918D517B100A61907 /* StringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2DC35818D517B100A61907 /* StringUtil.m */; };
-		9A7726A518A06B07003086A6 /* ExchangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7726A318A06B07003086A6 /* ExchangeViewController.m */; };
-		9A7726A618A06B07003086A6 /* ExchangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7726A418A06B07003086A6 /* ExchangeViewController.xib */; };
 		9A80E02118A587630048273D /* libSystem.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A80E02018A587630048273D /* libSystem.dylib */; };
 		9A80E02318A587670048273D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A80E02218A587670048273D /* Security.framework */; };
+		9A8B05DE18D60F25003DE320 /* SuperTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8B05DD18D60F25003DE320 /* SuperTextFieldView.m */; };
+		9A8B05E318D634B8003DE320 /* PaymentWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8B05E118D634B8003DE320 /* PaymentWindowController.m */; };
+		9A8B05E418D634B8003DE320 /* PaymentWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8B05E218D634B8003DE320 /* PaymentWindowController.xib */; };
 		9AAD46D8189EEF2F00EB63F4 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AAD46D7189EEF2F00EB63F4 /* DetailViewController.m */; };
 		9AAD46DB189EF54F00EB63F4 /* TransactionTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AAD46DA189EF54F00EB63F4 /* TransactionTableCellView.m */; };
 		9ABDECB318CE5D2E00649E56 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7CAC2C18A1B5E9004954CC /* QuartzCore.framework */; };
@@ -50,19 +52,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		03109B8918A00AC2004B3998 /* ExchangeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExchangeWindowController.h; path = CoinManager/UI/ExchangeWindowController.h; sourceTree = SOURCE_ROOT; };
-		03109B8A18A00AC2004B3998 /* ExchangeWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExchangeWindowController.m; path = CoinManager/UI/ExchangeWindowController.m; sourceTree = SOURCE_ROOT; };
-		03109B8B18A00AC2004B3998 /* ExchangeWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExchangeWindowController.xib; path = CoinManager/UI/ExchangeWindowController.xib; sourceTree = SOURCE_ROOT; };
 		0363351D18C907E700912EF0 /* OAuthHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthHelper.h; sourceTree = "<group>"; };
 		0363351E18C907E700912EF0 /* OAuthHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthHelper.m; sourceTree = "<group>"; };
 		0389B00618A14AE1007EC964 /* UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaults.h; sourceTree = "<group>"; };
 		0389B00718A14AE1007EC964 /* UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaults.m; sourceTree = "<group>"; };
 		0389B01D18A24DDD007EC964 /* Exchange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exchange.h; sourceTree = "<group>"; };
 		0389B01E18A24DDD007EC964 /* Exchange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exchange.m; sourceTree = "<group>"; };
-		0389B01F18A24DDD007EC964 /* ExchangeListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExchangeListener.h; sourceTree = "<group>"; };
 		9A007EF118CF96450061A3BE /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		9A007EF218CF96450061A3BE /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		9A007EF418CF99610061A3BE /* UserListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserListener.h; sourceTree = "<group>"; };
 		9A007EF518CF9B850061A3BE /* UserHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserHelper.h; sourceTree = "<group>"; };
 		9A007EF618CF9B850061A3BE /* UserHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserHelper.m; sourceTree = "<group>"; };
 		9A22E3BF189D3C8D005095C6 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = CoinManager/UI/MainViewController.h; sourceTree = SOURCE_ROOT; };
@@ -76,6 +73,14 @@
 		9A28EB36189EC7F400CF7BF3 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
 		9A28EB38189ED48D00CF7BF3 /* Receiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receiver.h; sourceTree = "<group>"; };
 		9A28EB39189ED48D00CF7BF3 /* Receiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receiver.m; sourceTree = "<group>"; };
+		9A29070218D5D45E005A686C /* PaymentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentController.h; sourceTree = "<group>"; };
+		9A29070318D5D45E005A686C /* PaymentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentController.m; sourceTree = "<group>"; };
+		9A29070518D5D485005A686C /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
+		9A29070618D5D485005A686C /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
+		9A29070718D5D485005A686C /* PaymentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentViewController.xib; sourceTree = "<group>"; };
+		9A29070E18D5E755005A686C /* ExchangeListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExchangeListener.h; sourceTree = "<group>"; };
+		9A29070F18D5E755005A686C /* UserListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserListener.h; sourceTree = "<group>"; };
+		9A29071118D5E78A005A686C /* BlockListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockListener.h; sourceTree = "<group>"; };
 		9A2DC34B18D4F42A00A61907 /* KBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBButton.h; sourceTree = "<group>"; };
 		9A2DC34C18D4F42A00A61907 /* KBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBButton.m; sourceTree = "<group>"; };
 		9A2DC34D18D4F42A00A61907 /* KBButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBButtonCell.h; sourceTree = "<group>"; };
@@ -86,12 +91,15 @@
 		9A2DC35518D5147800A61907 /* CustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTextField.m; sourceTree = "<group>"; };
 		9A2DC35718D517B100A61907 /* StringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringUtil.h; sourceTree = "<group>"; };
 		9A2DC35818D517B100A61907 /* StringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringUtil.m; sourceTree = "<group>"; };
-		9A7726A218A06B07003086A6 /* ExchangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExchangeViewController.h; path = CoinManager/UI/ExchangeViewController.h; sourceTree = SOURCE_ROOT; };
-		9A7726A318A06B07003086A6 /* ExchangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExchangeViewController.m; path = CoinManager/UI/ExchangeViewController.m; sourceTree = SOURCE_ROOT; };
-		9A7726A418A06B07003086A6 /* ExchangeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExchangeViewController.xib; path = CoinManager/UI/ExchangeViewController.xib; sourceTree = SOURCE_ROOT; };
 		9A7CAC2C18A1B5E9004954CC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9A80E02018A587630048273D /* libSystem.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSystem.dylib; path = usr/lib/libSystem.dylib; sourceTree = SDKROOT; };
 		9A80E02218A587670048273D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9A8B05DC18D60F25003DE320 /* SuperTextFieldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperTextFieldView.h; sourceTree = "<group>"; };
+		9A8B05DD18D60F25003DE320 /* SuperTextFieldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperTextFieldView.m; sourceTree = "<group>"; };
+		9A8B05DF18D61021003DE320 /* SuperTextFieldDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperTextFieldDelegate.h; sourceTree = "<group>"; };
+		9A8B05E018D634B8003DE320 /* PaymentWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentWindowController.h; sourceTree = "<group>"; };
+		9A8B05E118D634B8003DE320 /* PaymentWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentWindowController.m; sourceTree = "<group>"; };
+		9A8B05E218D634B8003DE320 /* PaymentWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentWindowController.xib; sourceTree = "<group>"; };
 		9AAD46D6189EEF2F00EB63F4 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = CoinManager/UI/DetailViewController.h; sourceTree = SOURCE_ROOT; };
 		9AAD46D7189EEF2F00EB63F4 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = CoinManager/UI/DetailViewController.m; sourceTree = SOURCE_ROOT; };
 		9AAD46D9189EF54F00EB63F4 /* TransactionTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionTableCellView.h; sourceTree = "<group>"; };
@@ -172,6 +180,32 @@
 			path = CoinManager/UI/Cells;
 			sourceTree = SOURCE_ROOT;
 		};
+		9A29070118D5D3F6005A686C /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				9A29070218D5D45E005A686C /* PaymentController.h */,
+				9A29070318D5D45E005A686C /* PaymentController.m */,
+				9A29070518D5D485005A686C /* PaymentViewController.h */,
+				9A29070618D5D485005A686C /* PaymentViewController.m */,
+				9A29070718D5D485005A686C /* PaymentViewController.xib */,
+				9A8B05E018D634B8003DE320 /* PaymentWindowController.h */,
+				9A8B05E118D634B8003DE320 /* PaymentWindowController.m */,
+				9A8B05E218D634B8003DE320 /* PaymentWindowController.xib */,
+			);
+			name = Payment;
+			path = CoinManager/UI/Payment;
+			sourceTree = SOURCE_ROOT;
+		};
+		9A29070D18D5E755005A686C /* Listener */ = {
+			isa = PBXGroup;
+			children = (
+				9A29070E18D5E755005A686C /* ExchangeListener.h */,
+				9A29070F18D5E755005A686C /* UserListener.h */,
+				9A29071118D5E78A005A686C /* BlockListener.h */,
+			);
+			path = Listener;
+			sourceTree = "<group>";
+		};
 		9A2DC34A18D4F42A00A61907 /* KBButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +246,9 @@
 				9A2DC35518D5147800A61907 /* CustomTextField.m */,
 				9AC23C9818D48E1400A23CC9 /* PopoverTextField.h */,
 				9AC23C9918D48E1400A23CC9 /* PopoverTextField.m */,
+				9A8B05DC18D60F25003DE320 /* SuperTextFieldView.h */,
+				9A8B05DD18D60F25003DE320 /* SuperTextFieldView.m */,
+				9A8B05DF18D61021003DE320 /* SuperTextFieldDelegate.h */,
 			);
 			name = Labels;
 			path = CoinManager/UI/Labels;
@@ -307,6 +344,7 @@
 			children = (
 				9A22E3C4189D3CAA005095C6 /* Cells */,
 				9AC23C9718D48DD000A23CC9 /* Labels */,
+				9A29070118D5D3F6005A686C /* Payment */,
 				9A24A212189F11700032726B /* CustomTableView.h */,
 				9A24A213189F11700032726B /* CustomTableView.m */,
 				9A22E3BF189D3C8D005095C6 /* MainViewController.h */,
@@ -314,12 +352,6 @@
 				9A22E3C1189D3C8D005095C6 /* MainViewController.xib */,
 				9AAD46D6189EEF2F00EB63F4 /* DetailViewController.h */,
 				9AAD46D7189EEF2F00EB63F4 /* DetailViewController.m */,
-				9A7726A218A06B07003086A6 /* ExchangeViewController.h */,
-				9A7726A318A06B07003086A6 /* ExchangeViewController.m */,
-				9A7726A418A06B07003086A6 /* ExchangeViewController.xib */,
-				03109B8918A00AC2004B3998 /* ExchangeWindowController.h */,
-				03109B8A18A00AC2004B3998 /* ExchangeWindowController.m */,
-				03109B8B18A00AC2004B3998 /* ExchangeWindowController.xib */,
 			);
 			name = UI;
 			path = Controller;
@@ -328,16 +360,15 @@
 		9ADF2C8C189D003C0008B268 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9A29070D18D5E755005A686C /* Listener */,
 				0389B01D18A24DDD007EC964 /* Exchange.h */,
 				0389B01E18A24DDD007EC964 /* Exchange.m */,
-				0389B01F18A24DDD007EC964 /* ExchangeListener.h */,
 				9A28EB38189ED48D00CF7BF3 /* Receiver.h */,
 				9A28EB39189ED48D00CF7BF3 /* Receiver.m */,
 				9A28EB35189EC7F400CF7BF3 /* Transaction.h */,
 				9A28EB36189EC7F400CF7BF3 /* Transaction.m */,
 				9A007EF118CF96450061A3BE /* User.h */,
 				9A007EF218CF96450061A3BE /* User.m */,
-				9A007EF418CF99610061A3BE /* UserListener.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -398,9 +429,9 @@
 				9ADF2C6E189D00190008B268 /* Images.xcassets in Resources */,
 				9A22E3C3189D3C8D005095C6 /* MainViewController.xib in Resources */,
 				9ADF2C66189D00190008B268 /* Credits.rtf in Resources */,
-				9A7726A618A06B07003086A6 /* ExchangeViewController.xib in Resources */,
-				03109B8D18A00AC2004B3998 /* ExchangeWindowController.xib in Resources */,
+				9A8B05E418D634B8003DE320 /* PaymentWindowController.xib in Resources */,
 				9AC23C9B18D48EDE00A23CC9 /* MainMenu.xib in Resources */,
+				9A29070918D5D485005A686C /* PaymentViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AC23C9A18D48E1400A23CC9 /* PopoverTextField.m in Sources */,
+				9A8B05DE18D60F25003DE320 /* SuperTextFieldView.m in Sources */,
 				9AC23CA618D490B700A23CC9 /* SFBPopoverWindowFrame.m in Sources */,
 				9AAD46DB189EF54F00EB63F4 /* TransactionTableCellView.m in Sources */,
 				0389B00818A14AE1007EC964 /* UserDefaults.m in Sources */,
@@ -420,8 +452,8 @@
 				9ADF2C69189D00190008B268 /* AppDelegate.m in Sources */,
 				9A24A214189F11700032726B /* CustomTableView.m in Sources */,
 				9A2DC35318D4F42A00A61907 /* NSColor+ColorExtensions.m in Sources */,
+				9A29070818D5D485005A686C /* PaymentViewController.m in Sources */,
 				9AC23CA518D490B700A23CC9 /* SFBPopoverWindow.m in Sources */,
-				9A7726A518A06B07003086A6 /* ExchangeViewController.m in Sources */,
 				9AEC631818A6DB20004820E0 /* ExchangeHelper.m in Sources */,
 				9A2DC35918D517B100A61907 /* StringUtil.m in Sources */,
 				9AC23CA418D490B700A23CC9 /* SFBPopover.m in Sources */,
@@ -435,9 +467,10 @@
 				0389B02018A24DDD007EC964 /* Exchange.m in Sources */,
 				9A28EB34189E539F00CF7BF3 /* RequestHelper.m in Sources */,
 				9A2DC35618D5147800A61907 /* CustomTextField.m in Sources */,
+				9A8B05E318D634B8003DE320 /* PaymentWindowController.m in Sources */,
 				9A28EB37189EC7F400CF7BF3 /* Transaction.m in Sources */,
+				9A29070418D5D45E005A686C /* PaymentController.m in Sources */,
 				9ADF2C62189D00190008B268 /* main.m in Sources */,
-				03109B8C18A00AC2004B3998 /* ExchangeWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
