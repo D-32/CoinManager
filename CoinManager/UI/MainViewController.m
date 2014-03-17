@@ -23,7 +23,7 @@
 #import <WebKit/WebKit.h>
 #import "PaymentWindowController.h"
 
-@interface MainViewController () <NSMenuDelegate, ExchangeListener, UserListener> {
+@interface MainViewController () <ExchangeListener, UserListener> {
     NSMutableArray* _addresses;
 }
 @property (strong) IBOutlet DetailViewController* descriptionViewController;
@@ -38,8 +38,6 @@
 @property (weak) IBOutlet KBButton *refreshButton;
 @property (weak) IBOutlet WebView* webView;
 
-- (IBAction)actionCopyAddress:(id)sender;
-- (IBAction)actionDelete:(id)sender;
 @end
 
 @implementation MainViewController {
@@ -149,14 +147,6 @@
         [_refreshIndicator stopAnimation:self];
         [_refreshIndicator removeFromSuperview];
         self.refreshButton.image = _refreshImage;
-    }
-}
-
-#pragma mark - NSMenuDelegate
-- (void)menuWillOpen:(NSMenu *)menu {
-    NSInteger index = [self.tableView clickedRow];
-    for (NSMenuItem* item in menu.itemArray) {
-        [item setEnabled:(index >= 0)];
     }
 }
 

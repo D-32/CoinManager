@@ -575,7 +575,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -590,7 +589,7 @@
 					"$(SRCROOT)/CoinManager/Libs/openssl/lib/**",
 					"/Users/d-32/Dropbox/projekte/CoinManager/CoinManager/Libs",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = CoinManager;
 				WRAPPER_EXTENSION = app;
 			};
@@ -600,7 +599,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -615,7 +613,7 @@
 					"$(SRCROOT)/CoinManager/Libs/openssl/lib/**",
 					"/Users/d-32/Dropbox/projekte/CoinManager/CoinManager/Libs",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = CoinManager;
 				WRAPPER_EXTENSION = app;
 			};

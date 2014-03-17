@@ -15,12 +15,6 @@
 
 @property (weak) IBOutlet NSToolbarItem *payItem;
 @property (weak) IBOutlet NSToolbarItem *donateItem;
-- (IBAction)actionToolbarAdd:(id)sender;
-- (IBAction)actionToolbarContacts:(id)sender;
-- (IBAction)actionToolbarGenerate:(id)sender;
-- (IBAction)actionToolbarPay:(id)sender;
-- (IBAction)actionToolbarDonate:(id)sender;
-- (IBAction)actionToolbarExchange:(id)sender;
 @property (nonatomic, strong) MainViewController* mainViewController;
 @end
 

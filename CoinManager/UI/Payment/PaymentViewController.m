@@ -61,7 +61,7 @@
     [oah startRequest:@"https://coinbase.com/api/v1/transactions/send_money" extraParms:nil postData:json completion:^(NSData* data) {
         NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
         NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        BOOL success = json[@"success"];
+        BOOL success = [json[@"success"] boolValue];
         
         [self setRefreshProgress:NO];
         

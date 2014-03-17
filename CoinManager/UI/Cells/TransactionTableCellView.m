@@ -15,8 +15,6 @@
 #import "PopoverTextField.h"
 #import "StringUtil.h"
 
-static int CONFIRMATION_WARNING_MIN = 6;
-
 @interface TransactionTableCellView () <ExchangeListener>
 @property (nonatomic, weak) IBOutlet NSImageView* imageView;
 @property (nonatomic, weak) IBOutlet PopoverTextField* totalLabel;

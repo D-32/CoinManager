@@ -12,7 +12,4 @@
 
 @interface MainViewController : NSViewController
 
-- (void)addItem;
-- (void)generateItem;
-
 @end
