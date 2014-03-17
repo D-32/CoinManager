@@ -396,6 +396,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Dylan Marriott";
+				TargetAttributes = {
+					9ADF2C51189D00190008B268 = {
+						DevelopmentTeam = 5EFBK52YD3;
+					};
+				};
 			};
 			buildConfigurationList = 9ADF2C4D189D00190008B268 /* Build configuration list for PBXProject "CoinManager" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -570,6 +575,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -584,6 +590,7 @@
 					"$(SRCROOT)/CoinManager/Libs/openssl/lib/**",
 					"/Users/d-32/Dropbox/projekte/CoinManager/CoinManager/Libs",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = CoinManager;
 				WRAPPER_EXTENSION = app;
 			};
@@ -593,6 +600,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -607,6 +615,7 @@
 					"$(SRCROOT)/CoinManager/Libs/openssl/lib/**",
 					"/Users/d-32/Dropbox/projekte/CoinManager/CoinManager/Libs",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = CoinManager;
 				WRAPPER_EXTENSION = app;
 			};
